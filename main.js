@@ -11,6 +11,7 @@ const listaCount = {};
 const arrayGuardado = [];
 const arrayCantidad = {};
 const arrayValor = []
+let numero = 0;
 
 
 MontoTotal.setAttribute('class', 'TotalPrice')
@@ -18,15 +19,10 @@ btnplus.addEventListener('click', sumarValorInput);
 btnplus.addEventListener('click', sumaPrecioTotal); 
 
 
-let numero = 0;
-
 function sumarValorInput(){
     numero++
-    // console.log(camisaInput.value)
     return camisaInput.value = numero
 }
-
-
 
 function sumaPrecioTotal(){
     const precioElemento = productos[0].price
@@ -42,12 +38,9 @@ function sumaPrecioTotal(){
 // creacion de los demas elemento segun el array de productos
 
 const container = document.createElement('div');
-
 function crearElement(){
-        
         let elemento = document.createElement('div');
         elemento.setAttribute('class', 'doDivContainer')
-       
 
         for(let i = 0; i < productos.length; i++){
             // crear divs
@@ -71,7 +64,7 @@ function crearElement(){
             addbtn.setAttribute('class','addBtn')
             addbtn.innerHTML = '+'
             div.appendChild(addbtn)
-            
+            // creating input div
             let inputDiv = document.createElement('input')
             inputDiv.setAttribute('type','text')
             inputDiv.setAttribute('class','inputDiv')
@@ -81,26 +74,18 @@ function crearElement(){
             inputLabel.innerHTML= 'cantidad'
             div.appendChild(inputDiv)
             div.appendChild(inputLabel)
-
-           
-            
+            // creating total sum
             let sumaTotal = document.createElement('p');
             sumaTotal.setAttribute('class','precioTotalCard')
             sumaTotal.innerHTML = 'precio total:'
             div.appendChild(sumaTotal)
             // termina creacion de divs
-
-
             addbtn.addEventListener('click',sumarCantidadInput)
             addbtn.addEventListener('click',sumarValorCantidad)
             addbtn.addEventListener('click',guardarEnArray)
             calcularTotal.addEventListener('click',sumaDeTodosElementos, guardarEnArray); 
-
-
-
            
             let numero = 0;
-       
             function sumarCantidadInput(){
                 numero ++;
                 const resultado = inputDiv.value = numero
@@ -116,12 +101,6 @@ function crearElement(){
                 return precioTotal
             }
             
-           
-    
-
-          
-
-            
             function guardarEnArray(){
             // console.log(productos[i])
             const elemento = Object.entries(productos[i])
@@ -133,17 +112,8 @@ function crearElement(){
                 listaCount[elemento[0][1]] = 1;
             }
             console.log(listaCount)
-            // console.log(Object.entries(listaCount))
-            // sumaDeTodosElementos(listaCount)
-            
-         
-            
-
-            
             return listaCount
         }
-        
-        
     }
     function reducirArray(valor){
         arrayValor.push(valor)
@@ -151,42 +121,24 @@ function crearElement(){
         const sumaDeTodo = arrayValor.reduce(sumarTodosMontos)
         console.log(sumaDeTodo)
         MontoTotal.innerHTML = `El monto total es de ${sumaDeTodo}$`;
-
     }
     function sumarTodosMontos(valorAcumulado , nuevoValor){
         return valorAcumulado + nuevoValor;
     }
-    
     function sumaDeTodosElementos(){
         // console.log(listaCount)
         let listaTotal = {}
         for (listaTotal in listaCount){
             for(let i = 0; i < productos.length; i++){
-            
             let valor = listaCount[listaTotal] * productos[i].price
             if(listaTotal == productos[i].name){
                reducirArray(valor)
-           
-            }
-           
-
-            
-            
+            }  
         }
     }
-   
-
 }
-
-
-
-
-mainContainer.append(elemento)
+    mainContainer.append(elemento)
 }
-
-
-
-
 crearElement()
 
 
