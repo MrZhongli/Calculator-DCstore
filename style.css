@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300&display=swap');
+/*     font-family: 'Bebas Neue', cursive; 
+    font-family: 'Roboto', sans-serif;*/
+
+h1{
+    font-family: 'Bebas Neue', cursive;
+}
+.camisaDiv{
+    display: none;
+    margin: 5px;
+}
+.camisaDiv input{
+    width: 50px;
+    height: 30px;
+    margin: 7px;
+}
+
+.camisaDiv button{
+    height: 20px;
+    margin: 16px 9px;
+}
+
+.divContainer{
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+    border: 1px solid rgb(217, 214, 214);
+    border-radius: 12px 12px 12px 12px ;
+    box-shadow:  rgb(174, 171, 171) 10px 10px 40px 0.1em;
+}
+
+.itemContainer{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+.precioTotalCard{
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.mainContainer{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+#totalContainer{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+#totalContainer button{
+    width: 100px;
+}
+
+.mainContainer div img{
+    width: 200px;
+    height: 240px;
+    /* padding; */
+    margin: 20px;
+}
+
+.doDivContainer{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    /* background-color: grey; */
+}
+
+.title{
+    text-align: center;
+}
+.addBtn{
+    width: 30px;
+    margin: auto;
+    margin-bottom: 15px;
+    background-color: black;
+    color: white;
+    border-radius: 12px 12px 12px 12px;
+}
+#calcularTotal{
+    /* width: px; */
+    margin: auto;
+    /* margin-bottom: 15px; */
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border-radius: 12px 12px 12px 12px;
+}
+
+#MontoTotal{
+    font-family: 'Roboto', sans-serif;
+
+}
+label{
+    font-family: 'Roboto', sans-serif;
+}
+
+.itemContainer{
+    margin: auto;
+    margin-top: 15px;
+}
+.inputDiv{
+    outline: none;
+    border: 0;
+    border-radius: 40px 40px 40px 40px;
+    margin: auto;
+    position: relative;
+    top: 18px;
+    left: -40px;
+    text-align: center;
+    
+    width:20px ;
+}
